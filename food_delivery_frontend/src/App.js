@@ -5,6 +5,7 @@ import './App.css';
 // PUBLIC_INTERFACE
 function App() {
   const [theme, setTheme] = useState('light');
+  const [logoError, setLogoError] = useState(false);
 
   // Effect to apply theme to document element
   useEffect(() => {
@@ -26,7 +27,31 @@ function App() {
         >
           {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
         </button>
-        <img src={logo} className="App-logo" alt="Food Delivery Logo" />
+        {!logoError ? (
+          <img 
+            src={logo} 
+            className="App-logo" 
+            alt="Food Delivery Logo" 
+            onError={() => setLogoError(true)} 
+            style={{ background: 'var(--logo-bg, #cfe5e2)' }}
+          />
+        ) : (
+          <div style={{
+            width: '40vmin',
+            height: '40vmin',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#a05a26',
+            fontWeight: 700,
+            fontSize: '2rem',
+            background: '#eee',
+            borderRadius: 16,
+            border: '2px dashed #a05a26'
+          }}>
+            Logo failed to load
+          </div>
+        )}
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
