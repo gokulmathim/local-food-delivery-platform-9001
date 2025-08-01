@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import logo from './assets/logo.png';
 import './App.css';
 
 // PUBLIC_INTERFACE
@@ -26,7 +26,7 @@ function App() {
         >
           {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
         </button>
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="Food Delivery Logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
