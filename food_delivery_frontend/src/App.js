@@ -5,20 +5,13 @@ import OnlineFoodLogo from './OnlineFoodLogo';
 
 // PUBLIC_INTERFACE
 function App() {
-  // App logo at the top, with space, followed by main page
+  // Header: modern responsive logo bar at top, centered, with padding and visual balance
   return (
     <div className="App" style={{ minHeight: "100vh", padding: 0, margin: 0 }}>
-      <header
-        style={{
-          background: "#fff",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          paddingTop: "28px",
-          paddingBottom: "12px",
-        }}
-      >
-        <OnlineFoodLogo size={80} />
+      <header className="top-app-header">
+        <div className="logo-header-inner">
+          <OnlineFoodLogo className="main-app-logo" />
+        </div>
       </header>
       <LoginPage />
     </div>
